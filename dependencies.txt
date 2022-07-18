@@ -1,0 +1,13 @@
+pip install loadenv
+pip install python-dotenv
+pip install psycopg2
+pip install nltk
+pip install pandas
+pip install py4j==0.10.9.3
+pip install findspark
+pip install requests
+pip install pymongo
+pip install psutil
+pip install dnspython
+pip install bokeh
+pip install geoviews
