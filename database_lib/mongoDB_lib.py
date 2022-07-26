@@ -6,7 +6,6 @@ import os
 def connect_mongoDB():
     load_dotenv()
     mongo_url = os.environ.get('MONGO_URL')
-    print(mongo_url)
     try:
         client = MongoClient(mongo_url)
         print("Connected to MongoDB Atlas successfully!")
