@@ -6,7 +6,7 @@ ETL Pipeline for Trending Tokens in each country using Twitter's 'recent search'
 
 # Demo-Preview
 
-![Dashboard Screenshot] (images/screenshot) -->
+[GIF](images/dashboard_screenshots.gif)
 
 # Table of contents
 
@@ -14,32 +14,27 @@ ETL Pipeline for Trending Tokens in each country using Twitter's 'recent search'
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
 - [Repository Structure](#repository_structure)
-- [Dependencies](#dependencies)
 - [Implementation](#implementation)
-
-# Dependencies
-[(Back to top)](#table-of-contents)
-
-The project requires the following libraries to be installed. Commands are as follows:
-
-pip install loadenv
-pip install python-dotenv
-pip install psycopg2
-pip install nltk
-pip install pandas
-pip install py4j==0.10.9.3
-pip install findspark
-pip install requests
-pip install pymongo
-pip install psutil
-pip install dnspython
-
-conda install -c pyviz geoviews=1.9.4
-conda install bokeh
 
 
 # Repository Structure
 [(Back to top)](#table-of-contents)
+- dashboard_data
+    - country_tokens.csv (final data for the dashboard)
+- database_lib
+    - mongoDB_lib.py (functions for MongoDB operations)
+    - postgre_lib.py (functions for PostGRE on AWS RDS operations)
+- processing_lib
+    - util.py (general utility functions used across files)
+    - twitter_lib.py (functions for handling Twitter API calls)
+    - spark_lib.py (functions for data transformation using PySpark)
+    - dashboard_data_lib.py (functions for supporting creation of final dataframe for the dashboard)
+- InitializationScript.py (Day 0 script for database initialization)
+- ExtractLoadTweets.py (Twitter API -> PySpark -> PostGre)
+- TransformLoadTOkens.py (PostGre -> PySpark -> MongoDB)
+- GenerateDashboardData.py (MongoDB -> PySpark -> CSV)
+- dataPipeline.bat (To run the ETL pipeline)
+- GeoDashboard.ipynb (The final dashboard notebook)
 
 
 # Implementation
